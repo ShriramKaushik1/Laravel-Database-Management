@@ -8,11 +8,15 @@
 1. Open Command Prompt or PowerShell.
 2. Go to file location. 
 3. Type this command and hit Enter to finish setting up the PHP packages:
+
    composer install
 4. Generate your unique app key:
+
    php artisan key:generate
 5. Build your SQLite database exactly as requested:
+
    php artisan migrate
 6. Start the application
+
    php artisan serve
 
