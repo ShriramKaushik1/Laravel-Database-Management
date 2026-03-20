@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Manager App</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; }
+        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.18); }
+    </style>
+</head>
+<body class="min-h-screen text-gray-800 antialiased selection:bg-indigo-200">
+
+    <nav class="glass sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">DB Manager</span>
+                    </div>
+                    <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="<?php echo e(route('import.index')); ?>" class="border-transparent text-gray-600 hover:text-indigo-600 hover:border-indigo-600 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors">Import Data</a>
+                        <a href="<?php echo e(route('deduplicate.index')); ?>" class="border-transparent text-gray-600 hover:text-indigo-600 hover:border-indigo-600 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors">Deduplicate</a>
+                        <a href="<?php echo e(route('report.index')); ?>" class="border-transparent text-gray-600 hover:text-indigo-600 hover:border-indigo-600 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors">Reports</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="py-10">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            
+            <?php if(session('success')): ?>
+            <div class="mb-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+                <span class="block sm:inline"><?php echo e(session('success')); ?></span>
+            </div>
+            <?php endif; ?>
+
+            <?php if(session('error')): ?>
+            <div class="mb-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                <span class="block sm:inline"><?php echo e(session('error')); ?></span>
+            </div>
+            <?php endif; ?>
+
+            <?php echo $__env->yieldContent('content'); ?>
+        </div>
+    </main>
+
+</body>
+</html>
+<?php /**PATH C:\Users\SHRI RAM KAUSHIK\Desktop\PHP ASSIGN\db_manager\resources\views/layouts/app.blade.php ENDPATH**/ ?>
