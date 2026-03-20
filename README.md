@@ -1,5 +1,9 @@
 # Laravel Database Management 
 
+This project is a Laravel-based Database Management Application designed to efficiently manage large-scale business listing data. It provides powerful tools to import, clean, organize, and analyze business records with a focus on duplicate detection and reporting.
+
+The system supports bulk data import from Google Drive, automatic duplicate identification, and a comprehensive reporting dashboard for data insights.
+
 # 📸 Screenshot
 
 <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/57f4ece2-438a-4eea-a56b-1aaa3435e61e" />
